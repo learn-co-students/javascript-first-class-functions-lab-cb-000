@@ -1,9 +1,9 @@
-const expect = require('expect')
+const expect = require('expect');
 const createSpy = expect.createSpy;
 
-const fs = require('fs')
-const jsdom = require('mocha-jsdom')
-const path = require('path')
+const fs = require('fs');
+const jsdom = require('mocha-jsdom');
+const path = require('path');
 
 
 describe('index', () => {
@@ -12,74 +12,74 @@ describe('index', () => {
 
   jsdom({
     src: sourceCode,
-  })
+  });
 
   describe('`countdown` function', function () {
     it('should exist', function () {
       expect(countdown).toExist()
-    })
+    });
 
     it('should have call the given callback function after two seconds', function (done) {
       this.timeout(3000);
-      const spy = createSpy()
-      countdown(spy)
+      const spy = createSpy();
+      countdown(spy);
 
-      expect(spy).toNotHaveBeenCalled()
+      expect(spy).toNotHaveBeenCalled();
 
       setTimeout(function () {
-        expect(spy).toHaveBeenCalled()
+        expect(spy).toHaveBeenCalled();
         done();
-      }, 2001)
-    })
-  })
+      }, 2001);
+    });
+  });
   
   describe('`createMultiplier` function', function () {
     it('should exist', function () {
-      expect(createMultiplier).toExist()
-    })
+      expect(createMultiplier).toExist();
+    });
 
     it('should return a function', function () {
-      const doubler = createMultiplier(2)
-      expect(doubler).toBeA('function')
-    })
+      const doubler = createMultiplier(2);
+      expect(doubler).toBeA('function');
+    });
 
     it('should multiply a given value using the created multiplier', function () {
-      const doubler = createMultiplier(2)
-      expect(doubler(5)).toEqual(10)
-    })
-  })
+      const doubler = createMultiplier(2);
+      expect(doubler(5)).toEqual(10);
+    });
+  });
 
   describe('Multiplier functions created with `createMultiplierBonus`', function () {
     it('should have a doubler function', function () {
-      expect(doubler).toExist()
-      expect(doubler).toBeA('function')
-      expect(doubler(5)).toEqual(10)
-    })
+      expect(doubler).toExist();
+      expect(doubler).toBeA('function');
+      expect(doubler(5)).toEqual(10);
+    });
 
     it('should have a tripler function', function () {
-      expect(tripler).toExist()
-      expect(tripler).toBeA('function')
-      expect(tripler(5)).toEqual(15)
-    })
-  })
+      expect(tripler).toExist();
+      expect(tripler).toBeA('function');
+      expect(tripler(5)).toEqual(15);
+    });
+  });
 
   describe('`multiplier()` with partial application', function () {
     it('should exist', function () {
-      expect(multiplier).toExist()
-    })
+      expect(multiplier).toExist();
+    });
 
     it('should have a doubler function created using `.bind()`', function () {
       const hasUsedBind = sourceCode.indexOf('.bind(') !== -1;
 
       if (!hasUsedBind) {
-        throw new Error("No cheating! Make sure to use `.bind()` for this solution!")
+        throw new Error("No cheating! Make sure to use `.bind()` for this solution!");
       }
 
-      expect(doublerWithBind).toExist()
-      expect(doublerWithBind).toBeA('function')
+      expect(doublerWithBind).toExist();
+      expect(doublerWithBind).toBeA('function');
 
-      expect(triplerWithBind).toExist()
-      expect(triplerWithBind).toBeA('function')
-    })
-  })
-})
+      expect(triplerWithBind).toExist();
+      expect(triplerWithBind).toBeA('function');
+    });
+  });
+});
