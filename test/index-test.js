@@ -68,7 +68,7 @@ describe('index', function() {
     });
 
     it('should have a doubler function created using `.bind()`', function () {
-      if (server && !hasUsedBind) {
+      if (typeof server !== 'undefined' && server && !hasUsedBind) {
         throw new Error("No cheating! Make sure to use `.bind()` for this solution!");
       }
 
