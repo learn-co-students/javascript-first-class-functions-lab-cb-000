@@ -1,38 +1,37 @@
-const expect = require('expect');
-const createSpy = expect.createSpy;
-
-const fs = require('fs');
-const jsdom = require('mocha-jsdom');
-const path = require('path');
-
-
-describe('index', () => {
-
-  const sourceCode = fs.readFileSync(path.resolve(__dirname, '..', 'index.js'), 'utf-8');
-
-  jsdom({
-    src: sourceCode,
-  });
-
+describe('index', function() {
   describe('`countdown` function', function () {
+    before(function() {
+      let useFakeTimers = null;
+
+      if (typeof sinon === 'undefined') {
+        useFakeTimers = require('sinon').useFakeTimers;
+      } else {
+        useFakeTimers = sinon.useFakeTimers;
+      }
+
+      this.clock = useFakeTimers();
+    })
+
+    after(function() {
+      this.clock.restore();
+    });
+
     it('should exist', function () {
       expect(countdown).toExist()
     });
 
     it('should have call the given callback function after two seconds', function (done) {
-      this.timeout(3000);
-      const spy = createSpy();
+      const spy = expect.createSpy();
       countdown(spy);
 
       expect(spy).toNotHaveBeenCalled();
 
-      setTimeout(function () {
-        expect(spy).toHaveBeenCalled();
-        done();
-      }, 2001);
+      this.clock.tick(2001);
+
+      expect(spy).toHaveBeenCalled();
     });
   });
-  
+
   describe('`createMultiplier` function', function () {
     it('should exist', function () {
       expect(createMultiplier).toExist();
