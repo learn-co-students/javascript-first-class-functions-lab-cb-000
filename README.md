@@ -19,7 +19,7 @@ or return them.
 *Dudududuuuuuu. Dudududu.*
 
 The band, Europe, has been struggling to keep in rhythm with each other. When the keyboard tunes stop, the vocals should
-kick in after two seconds — for dramatic effect, naturally!. Unfortunately, the lead singer has been missing the mark
+kick in after two seconds — for dramatic effect, naturally! Unfortunately, the lead singer has been missing the mark
 lately. Let's help him out!
 
 We'll start things off by creating a `countdown()` function. This function takes one argument, `callback`, which is a
@@ -59,3 +59,5 @@ argument.
 - [Wikipedia: First-class function](https://en.wikipedia.org/wiki/First-class_function)
 - [MDN: Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
 - [JavaScript is Sexy: Higher-Order Functions](http://javascriptissexy.com/tag/higher-order-functions/)
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/javascript-first-class-functions-lab'>First Class Functions Lab</a> on Learn.co and start learning to code for free.</p>
