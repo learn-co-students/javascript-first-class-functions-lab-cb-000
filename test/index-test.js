@@ -29,6 +29,7 @@ describe('index', function() {
       this.clock.tick(2001);
 
       expect(spy).toHaveBeenCalled();
+
     });
   });
 
@@ -79,4 +80,5 @@ describe('index', function() {
       expect(triplerWithBind).toBeA('function');
     });
   });
+  
 });
