@@ -1,0 +1,42 @@
+
+> functions-returning-functions-lab@0.1.0 test /home/paskalm-65063/code/labs/javascript-first-class-functions-lab-cb-000
+> mocha --timeout 5000 -R mocha-multi --reporter-options nyan=-,json=.results.json
+
+ 0
+ 0
+ 0
+
+[4A[5C-
+[5C-
+[5C-
+[5C-
+[4A[6C_,------,
+[6C_|   /\_/\ 
+[6C^|__( - .-) 
+[6C  ""  "" 
+[4A 0
+ 1
+ 0
+
+[4A[5C-_
+[5C-_
+[5C-_
+[5C-_
+[4A[7C_,------,
+[7C_|  /\_/\ 
+[7C~|_( x .x) 
+[7C ""  "" 
+[4A
+
+
+
+
+  0 passing (5s)
+  1 failing
+
+  1)  "before all" hook:
+     Error: timeout of 5000ms exceeded. Ensure the done() callback is being called in this test.
+  
+
+
+
