@@ -1,36 +1,21 @@
-function runFiveMiles() {
-  console.log('Go for a five mile run');
+function countdown(callback) {
+  setTimeout(function () {
+    callback();
+  }, 2000);
 }
 
-function liftWeights() {
-  console.log('Pump iron');
+function createMultiplier(multiplyValue) {
+  return function (val) {
+    return multiplyValue * val;
+  };
 }
 
-function swimFortyLaps() {
-  console.log('Swim 40 laps');
+function multiplier(x, y) {
+  return x * y;
 }
 
-function exerciseRoutine(postRunActivity) {
-  runFiveMiles();
-  postRunActivity();
-}
+var doubler = createMultiplier(2);
+var tripler = createMultiplier(3);
 
-function morningRoutine(exercise) {
-  var breakfast = null
-
-  if (exercise === liftWeights) {
-    breakfast = 'protein bar'
-  } else if (exercise === swimFortyLaps) {
-    breakfast = 'kale smoothie'
-  } else {
-    breakfast = 'granola'
-  }
-
-  exerciseRoutine(exercise)
-
-  return function() {
-    console.log('Nom nom nom, this ${breakfast} is delicious!')
-  }
-  
-}
-
+var doublerWithBind = multiplier.bind(null, 2);
+var triplerWithBind = multiplier.bind(null, 3);
