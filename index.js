@@ -2,19 +2,18 @@ function countdown(callback) {
   setTimeout(callback, 2000);
 }
 
-var doubler = createMultiplier(2) //
-var tripler = createMultiplier(3)
-//var quadrupeler = createMultiplier(4)
-
 function createMultiplier(multiplierValue) {
-  return function (x) {
+  return function(x) {
     return multiplierValue * x;
   }
 }
 
-function multiplier(y, z) {
-  return y * z;
+var doubler = createMultiplier(2);
+var tripler = createMultiplier(3);
+
+function multiplier(a, b) {
+  return a * b;
 }
 
-var doublerWithBind = multiplier.bind(null, 2)
-var triplerWithBind = multiplier.bind(null, 3)
+doublerWithBind = createMultiplier.bind(null, 2);
+triplerWithBind = createMultiplier.bind(null, 3);
