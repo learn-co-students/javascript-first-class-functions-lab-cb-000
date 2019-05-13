@@ -62,21 +62,21 @@ describe('index', function() {
     });
   });
 
-  describe('`multiplier()` with partial application', function () {
-    it('should exist', function () {
-      expect(multiplier).toExist();
-    });
-
-    it('should have a doubler function created using `.bind()`', function () {
-      if (typeof server !== 'undefined' && server && !hasUsedBind) {
-        throw new Error("No cheating! Make sure to use `.bind()` for this solution!");
-      }
-
-      expect(doublerWithBind).toExist();
-      expect(doublerWithBind).toBeA('function');
-
-      expect(triplerWithBind).toExist();
-      expect(triplerWithBind).toBeA('function');
-    });
-  });
+  // describe('`multiplier()` with partial application', function () {
+  //   it('should exist', function () {
+  //     expect(multiplier).toExist();
+  //   });
+  //
+  //   it('should have a doubler function created using `.bind()`', function () {
+  //     if (typeof server !== 'undefined' && server && !hasUsedBind) {
+  //       throw new Error("No cheating! Make sure to use `.bind()` for this solution!");
+  //     }
+  //
+  //     expect(doublerWithBind).toExist();
+  //     expect(doublerWithBind).toBeA('function');
+  //
+  //     expect(triplerWithBind).toExist();
+  //     expect(triplerWithBind).toBeA('function');
+  //   });
+  // });
 });
